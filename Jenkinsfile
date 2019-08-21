@@ -14,11 +14,7 @@ pipeline {
             sh 'docker-compose -f udacity-c3-deployment/docker/docker-compose-build.yaml push'
               }
         }
-      stage('Start microservices') {
-          steps {
-            
-             }
-        }
+
       }
     }
   
