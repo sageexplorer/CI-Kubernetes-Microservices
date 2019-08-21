@@ -3,7 +3,8 @@ pipeline {
   stages {
       stage('Build Docker Image') {
         steps {
-          sh `cd udacity-c3-deployment/docker && docker-compose -f docker-compose-build.yaml build --parallel`
+          sh 'cd udacity-c3-deployment/docker'
+          sh 'docker-compose -f docker-compose-build.yaml build --parallel'
             }
         }
       stage('Upload Docker Image') {
