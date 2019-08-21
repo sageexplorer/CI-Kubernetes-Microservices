@@ -2,6 +2,6 @@
 
 # This project includes Docker, Kubernetes, CLoudformation, and Jenkins to build a Microservices App.
 
-* Create_eks.sh script will create a kubernetes cluser in AWS. 
+* create_eks.sh script will create a kubernetes cluser in AWS. 
 
 
