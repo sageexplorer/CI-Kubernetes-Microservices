@@ -1,34 +1,19 @@
 pipeline {
   agent any 
   stages {
-    stage('Lint HTML'){
-      steps{
-         sh 'find . -name "*.html" -type f -print -exec tidy -mq "{}"'
-        }
-      }
       stage('Build Docker Image') {
         steps {
-          sh './run_docker.sh'
+          sh 'cd udacity-c3-deployment/docker && docker-compose -f docker-compose-build.yaml build --parallel'
             }
         }
       stage('Upload Docker Image') {
           steps {
-            sh './upload_docker.sh'
+            sh 'cd udacity-c3-deployment/docker && docker-compose -f docker-compose-build.yaml push'
               }
         }
-      stage('Run Integration Test to check the site') {
+      stage('Start microservices') {
           steps {
-            sh '''#!/bin/bash
-              if curl -s "http://ec2-18-219-86-226.us-east-2.compute.amazonaws.com/" | grep "simple app"
-                then
-                # if the keyword is in the conent
-                  echo " the website is working fine"
-                exit 0 
-              else
-                echo "Error"
-                exit 1
-              fi
-              '''
+            sh 'cd udacity-c3-deployment/docker && docker-compose up'
              }
         }
       }
