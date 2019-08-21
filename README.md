@@ -5,4 +5,3 @@
 * Create_eks.sh script will create a kubernetes cluser in AWS. 
 
 
-![Image description]https://d33wubrfki0l68.cloudfront.net/1567471e7c58dc9b7d9c65dcd54e60cbf5870daa/da576/_common-resources/images/flower.png
