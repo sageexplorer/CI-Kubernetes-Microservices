@@ -1,7 +1,8 @@
 [![CircleCI](https://circleci.com/gh/sageexplorer/CI-Kubernetes-Microservices.svg?style=svg)](https://circleci.com/gh/sageexplorer/CI-Kubernetes-Microservices)
 
-# This project includes Docker, Kubernetes, CLoudformation, and circleci to build a Microservices App.
+# This project includes Docker, Kubernetes, EKS(AWS), and circleci to build a Microservices App.
 # This project uses circleci for CI/CD 
+# circleci badge displayed above shows project pass/fail status
 
 * Docker Images are hosted in dockerhub
 
@@ -11,9 +12,17 @@
 
 Rolling Updates:
 
-* Rolling updates can be made by running kubectl apply -f kubernetes/deployment.yml
+* Rolling updates can be made by running kubectl apply -f {deployment yml file}, for example: `udacity-c3-deployment/k8s/frontend-deployment.yaml`
 
-* Rolling update is defined in kubernetes/deployment.yml
+* Rolling update is also defined in udacity-c3-deployment/k8s/frontend-deployment.yaml.
+
+`spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0`
 
 * To perform rolling update, change the version in deployment to a newer version, like v3m or change the container image.
 
@@ -46,3 +55,6 @@ How to update the site?
 
 Push changes to git, it will trigger a build pipeline that runs tests, and lints the source codes. If build passes, docker image is uploaded, and a udagram site is build. When the build step passes, kubernetes can be run on the clusters created by ./create_eks.sh command. 
 
+
+
+Cloudwatch Logs are created in the EKS clusster AWS concole. Log details are shown in the screenshots of this project zip file. 
