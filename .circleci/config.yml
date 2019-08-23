@@ -26,12 +26,12 @@ jobs:
           command: |
             set -x
             # sudo rm /usr/local/bin/docker-compose
-            sudo usermod -a -G docker $USER
+            #sudo usermod -a -G docker $USER
             curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
             chmod +x /usr/local/bin/docker-compose
 
       - deploy:
           name: Build and push Docker image
           command: |
-            docker-compose -f udacity-c3-deployment/docker/docker-compose-build.yaml build --parallel
+            sudo docker-compose -f udacity-c3-deployment/docker/docker-compose-build.yaml build --parallel
             
