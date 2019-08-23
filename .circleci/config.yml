@@ -37,5 +37,5 @@ jobs:
       - deploy:  
           name: Start Microservices 
           command: |
-            docker-compose up
+            cd udacity-c3-deployment/docker && /usr/local/bin/docker-compose up
             
