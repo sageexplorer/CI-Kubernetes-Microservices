@@ -1,8 +1,8 @@
 [![CircleCI](https://circleci.com/gh/sageexplorer/CI-Kubernetes-Microservices.svg?style=svg)](https://circleci.com/gh/sageexplorer/CI-Kubernetes-Microservices)
 
-## This project includes Docker, Kubernetes, CLoudformation, and circleci to build a Microservices App.
-## This project uses circleci for CI/CD 
-## circleci badge displayed above shows project pass/fail status
+### This project includes Docker, Kubernetes, CLoudformation, and circleci to build a Microservices App.
+### This project uses circleci for CI/CD 
+### circleci badge displayed above shows project pass/fail status
 
 * Docker Images are hosted in dockerhub
 
@@ -26,7 +26,7 @@ Rolling Updates:
 
 * To perform rolling update, change the version in deployment to a newer version, like v3m or change the container image.
 
-* To perfrom a rollout, following command was issued, and the site got restored to the previous version. kubectl rollout undo deployment/ngnix
+* To perfrom a rollout, following command was issued, and the site got restored to the previous version. kubectl rollout undo deployment/{DEPLOYMENT NAME}
 
 kubernetes Cluster
 
