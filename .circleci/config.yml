@@ -34,8 +34,8 @@ jobs:
           command: |
             /usr/local/bin/docker-compose -f udacity-c3-deployment/docker/docker-compose-build.yaml build --parallel
             
-      - deploy:  
-          name: Start Microservices 
-          command: |
-            cd udacity-c3-deployment/docker && /usr/local/bin/docker-compose up
+#       - deploy:  
+#           name: Start Microservices 
+#           command: |
+#             cd udacity-c3-deployment/docker && /usr/local/bin/docker-compose up
             
