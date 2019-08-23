@@ -32,7 +32,7 @@ jobs:
             sudo systemctl disable docker.service
             sudo systemctl stop docker.service
             sudo systemctl enable docker.socket
-           sudo systemctl start docker.socket
+            sudo systemctl start docker.socket
       - deploy:
           name: Build and push Docker image
           command: |
