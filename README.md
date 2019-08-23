@@ -1,8 +1,8 @@
 [![CircleCI](https://circleci.com/gh/sageexplorer/CI-Kubernetes-Microservices.svg?style=svg)](https://circleci.com/gh/sageexplorer/CI-Kubernetes-Microservices)
 
-### This project includes Docker, Kubernetes, EKS(AWS), and circleci to build a Microservices App.
-### This project uses circleci for CI/CD 
-### circleci badge displayed above shows project pass/fail status
+# This project includes Docker, Kubernetes, CLoudformation, and circleci to build a Microservices App.
+# This project uses circleci for CI/CD 
+# circleci badge displayed above shows project pass/fail status
 
 * Docker Images are hosted in dockerhub
 
@@ -26,7 +26,7 @@ Rolling Updates:
 
 * To perform rolling update, change the version in deployment to a newer version, like v3m or change the container image.
 
-* To perfrom a rollout, following command was issued, and the site got restored to the previous version. kubectl rollout undo deployment/{DEPLOYMENT NAME}
+* To perfrom a rollout, following command was issued, and the site got restored to the previous version. kubectl rollout undo deployment/ngnix
 
 kubernetes Cluster
 
@@ -53,8 +53,22 @@ To build kubernetes deployment, and service in AWS, run:
 
 How to update the site?
 
- * Push changes to git, it will trigger a build pipeline that runs tests, and lints the source codes. If build passes, docker image is uploaded, and a udagram site is build. When the build step passes, kubernetes can be run on the clusters created by ./create_eks.sh command. 
+Push changes to git, it will trigger a build pipeline that runs tests, and lints the source codes. If build passes, docker image is uploaded, and a udagram site is build. When the build step passes, kubernetes can be run on the clusters created by ./create_eks.sh command. 
 
-LOGS:
 
-* Cloudwatch Logs are created in the EKS clusster AWS concole. Log details are shown in the screenshots of this project zip file. 
+
+Cloudwatch Logs are created in the EKS clusster AWS concole. Log details are shown in the screenshots of this project zip file. 
+
+A/B Deployment 
+
+ * A/B tests are performed by deplying different versions of the site at the same time.
+
+ * New Docker image is created
+
+ * New deployemnt yml file is created in the deployment/k8s folder called frontend-canary-deployment.yml
+
+ * Replica set is scaled down to 1
+
+ * The `app: frontend, and track: stable`  are added/changed so that the newer vewrsion has a label
+
+ * Finally, following command is run `kubectl apply -f frontend-canary-deployment.yml'
