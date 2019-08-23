@@ -4,7 +4,7 @@ jobs:
     docker:
       # using custom image, see .circleci/images/primary/Dockerfile
       - image: circleci/cci-demo-docker-primary:0.0.2
-    working_directory: udacity-c3-deployment/docker
+    #working_directory: udacity-c3-deployment/docker
 
     steps:
       - checkout
@@ -29,5 +29,5 @@ jobs:
       - deploy:
           name: Build and push Docker image
           command: |
-            docker-compose -f udacity-c3-deployment/docker/docker-compose-build.yaml build --parallel
+            - docker-compose -f udacity-c3-deployment/docker/docker-compose-build.yaml build --parallel
             
