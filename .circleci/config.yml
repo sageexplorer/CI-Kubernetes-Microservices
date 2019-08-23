@@ -37,5 +37,5 @@ jobs:
       - deploy:  
           name: Start Microservices 
           command: |
-            /usr/local/bin/docker-compose up
+            docker-compose up
             
