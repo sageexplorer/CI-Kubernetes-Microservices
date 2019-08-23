@@ -1,6 +1,6 @@
-[![Build Status](http://ec2-18-219-86-226.us-east-2.compute.amazonaws.com:8080/buildStatus/icon?job=microservices%2Fmaster)](http://ec2-18-219-86-226.us-east-2.compute.amazonaws.com:8080/job/microservices/job/master/)
+[![CircleCI](https://circleci.com/gh/sageexplorer/CI-Kubernetes-Microservices.svg?style=svg)](https://circleci.com/gh/sageexplorer/CI-Kubernetes-Microservices)
 
-# This project includes Docker, Kubernetes, CLoudformation, and Jenkins to build a Microservices App.
+# This project includes Docker, Kubernetes, CLoudformation, and circleci to build a Microservices App.
 
 * create_eks.sh script will create a kubernetes cluser in AWS. 
 
