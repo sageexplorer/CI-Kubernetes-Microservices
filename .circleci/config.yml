@@ -29,5 +29,5 @@ jobs:
       - deploy:
           name: Build and push Docker image
           command: |
-            docker-compose -f docker-compose-build.yaml build --parallel
+            docker-compose -f udacity-c3-deployment/docker/docker-compose-build.yaml build --parallel
             
