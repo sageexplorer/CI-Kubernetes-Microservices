@@ -29,8 +29,10 @@ jobs:
             #sudo usermod -a -G docker $USER
             curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
             chmod +x /usr/local/bin/docker-compose
-            sudo systemctl start docker
-
+            sudo systemctl disable docker.service
+            sudo systemctl stop docker.service
+            sudo systemctl enable docker.socket
+           sudo systemctl start docker.socket
       - deploy:
           name: Build and push Docker image
           command: |
