@@ -1,8 +1,8 @@
 [![CircleCI](https://circleci.com/gh/sageexplorer/CI-Kubernetes-Microservices.svg?style=svg)](https://circleci.com/gh/sageexplorer/CI-Kubernetes-Microservices)
 
-# This project includes Docker, Kubernetes, CLoudformation, and circleci to build a Microservices App.
-# This project uses circleci for CI/CD 
-# circleci badge displayed above shows project pass/fail status
+## This project includes Docker, Kubernetes, CLoudformation, and circleci to build a Microservices App.
+## This project uses circleci for CI/CD 
+## circleci badge displayed above shows project pass/fail status
 
 * Docker Images are hosted in dockerhub
 
