@@ -44,5 +44,5 @@ To build kubernetes deployment, and service in AWS, run:
 
 How to update the site?
 
-Push changes to git, it will trigger a build pipeline that runs tests, and lints the source codes. If build passes, docker image is uploaded, and a ngnix site is build. When the build step passes, kubernetes can be run on the clusters created by cloudformation command. Note: at this point, kubectl is run locally, but this could also be part of the build pipeline
+Push changes to git, it will trigger a build pipeline that runs tests, and lints the source codes. If build passes, docker image is uploaded, and a udagram site is build. When the build step passes, kubernetes can be run on the clusters created by ./create_eks.sh command. 
 
