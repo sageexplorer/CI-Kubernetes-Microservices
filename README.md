@@ -3,6 +3,7 @@
 ### This project includes Docker, Kubernetes,EKS(AWS), and circleci to build a Microservices App.
 ### This project uses circleci for CI/CD 
 ### circleci badge displayed above shows project pass/fail status
+### Screnshots of the project is in the screenshot direcotry
 
 * Docker Images are hosted in dockerhub
 
