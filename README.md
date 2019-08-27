@@ -7,6 +7,7 @@
 
 
 
+
 * Docker Images are hosted in dockerhub
 
 * When code is changed, circleci builds docker images, runs tests, and starts microservices
@@ -59,7 +60,7 @@ How to update the site?
 Push changes to git, it will trigger a build pipeline that runs tests, and lints the source codes. If build passes, docker image is uploaded, and a udagram site is build. When the build step passes, kubernetes can be run on the clusters created by ./create_eks.sh command. 
 
 
-## Cloudwatch 
+#### Cloudwatch 
  * Cloudwatch Logs are created in the EKS clusster AWS concole. Log details are shown in the screenshots of this project in the screenshot directory
 
 A/B Deployment 
